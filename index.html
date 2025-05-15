@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-P8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="antialiased text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">ShopLogo</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Products</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                </nav>
+                <div class="flex items-center">
+                    <button class="p-2 rounded-full text-gray-600 hover:text-blue-600 hover:bg-gray-100">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="ml-2 p-2 rounded-full text-gray-600 hover:text-blue-600 hover:bg-gray-100">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="ml-1 text-xs bg-red-500 text-white rounded-full px-1.5 py-0.5">3</span>
+                    </button>
+                    <button class="ml-2 p-2 rounded-full text-gray-600 hover:text-blue-600 hover:bg-gray-100 md:hidden" id="mobileMenuButton">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Home</a>
+            <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Products</a>
+            <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">About</a>
+            <a href="#" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <div>
+                <div class="main-image-container bg-white rounded-lg shadow-lg p-2 border border-gray-200">
+                    <img id="mainProductImage" src="https://placehold.co/600x600/e2e8f0/94a3b8?text=Main+Product" alt="Main Product Image" class="w-full h-auto object-cover rounded-md aspect-square">
+                    <img id="mainProductImageZoom" src="https://placehold.co/600x600/e2e8f0/94a3b8?text=Main+Product" alt="Main Product Image Zoom" class="absolute top-0 left-0 w-full h-auto object-cover rounded-md pointer-events-none opacity-0 aspect-square">
+                </div>
+                <div class="thumbnail-gallery flex space-x-2 mt-4 overflow-x-auto pb-2">
+                    <img src="https://placehold.co/100x100/e2e8f0/94a3b8?text=Thumb+1" alt="Thumbnail 1" data-fullimage="https://placehold.co/600x600/e2e8f0/94a3b8?text=Thumb+1" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500 active-thumbnail">
+                    <img src="https://placehold.co/100x100/dbeafe/3b82f6?text=Thumb+2" alt="Thumbnail 2" data-fullimage="https://placehold.co/600x600/dbeafe/3b82f6?text=Thumb+2" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500">
+                    <img src="https://placehold.co/100x100/fee2e2/ef4444?text=Thumb+3" alt="Thumbnail 3" data-fullimage="https://placehold.co/600x600/fee2e2/ef4444?text=Thumb+3" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500">
+                    <img src="https://placehold.co/100x100/d1fae5/10b981?text=Thumb+4" alt="Thumbnail 4" data-fullimage="https://placehold.co/600x600/d1fae5/10b981?text=Thumb+4" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500">
+                    <img src="https://placehold.co/100x100/fef3c7/f59e0b?text=Thumb+5" alt="Thumbnail 5" data-fullimage="https://placehold.co/600x600/fef3c7/f59e0b?text=Thumb+5" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500">
+                    <img src="https://placehold.co/100x100/e0e7ff/6366f1?text=Thumb+6" alt="Thumbnail 6" data-fullimage="https://placehold.co/600x600/e0e7ff/6366f1?text=Thumb+6" class="w-20 h-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500">
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900" id="productName">Premium Comfort T-Shirt</h1>
+                <p class="text-3xl text-gray-700" id="productPrice">$29.99</p>
+                
+                <div>
+                    <h3 class="text-sm font-medium text-gray-900">Color: <span id="selectedColorName" class="font-semibold">Steel Blue</span></h3>
+                    <div id="colorOptions" class="flex space-x-2 mt-2">
+                        <button data-color="Steel Blue" data-image="https://cdn.pixabay.com/photo/2024/04/29/04/21/neon-8726714_1280.jpg" class="color-swatch w-8 h-8 rounded-full bg-blue-400 border-2 border-gray-300 focus:outline-none selected-swatch" title="Steel Blue"></button>
+                        <button data-color="Ruby Red" data-image="https://cdn.pixabay.com/photo/2023/05/06/01/33/t-shirt-7973394_1280.jpg" class="color-swatch w-8 h-8 rounded-full bg-red-400 border-2 border-gray-300 focus:outline-none" title="Ruby Red"></button>
+                        <button data-color="Forest Green" data-image="https://cdn.pixabay.com/photo/2023/05/08/21/59/tshirt-7979852_1280.jpg" class="color-swatch w-8 h-8 rounded-full bg-green-400 border-2 border-gray-300 focus:outline-none" title="Forest Green"></button>
+                        <button data-color="Midnight Black" data-image="https://cdn.pixabay.com/photo/2023/05/08/21/59/woman-7979850_1280.jpg" class="color-swatch w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-300 focus:outline-none" title="Midnight Black"></button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm font-medium text-gray-900">Size: <span id="selectedSizeName" class="font-semibold">Medium</span></h3>
+                        <button id="sizeChartButton" class="text-sm font-medium text-blue-600 hover:text-blue-500">Size chart</button>
+                    </div>
+                    <div id="sizeOptions" class="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-5">
+                        <button data-size="XS" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">XS</button>
+                        <button data-size="S" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">S</button>
+                        <button data-size="M" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 bg-blue-500 text-white">M</button>
+                        <button data-size="L" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">L</button>
+                        <button data-size="XL" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">XL</button>
+                        <button data-size="XXL" class="size-button border border-gray-300 rounded-md py-2 px-3 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">XXL</button>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <label for="quantity" class="text-sm font-medium text-gray-900">Quantity:</label>
+                    <select id="quantity" name="quantity" class="rounded-md border border-gray-300 py-2 pl-3 pr-8 text-base leading-6 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <button type="button" class="w-full bg-blue-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                    <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                </button>
+
+                <button id="compareColorsButton" class="w-full bg-gray-100 border border-gray-300 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+                    <i class="fas fa-palette mr-2"></i> Compare Colours
+                </button>
+
+                <div id="productState" class="mt-4 p-3 bg-gray-50 rounded-md text-sm text-gray-600 border border-gray-200">
+                    Selected: <span id="productStateColor" class="font-semibold">Steel Blue</span>, <span id="productStateSize" class="font-semibold">Medium</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="mt-16 py-8 bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Buy These Together & Save!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg bg-gray-50">
+                    <img src="https://placehold.co/150x150/e2e8f0/94a3b8?text=Main+Item" alt="Main Bundle Item" class="w-32 h-32 object-cover rounded-md mb-3">
+                    <h3 class="font-medium text-gray-800">Premium Comfort T-Shirt</h3>
+                    <p class="text-lg font-semibold text-blue-600">$29.99</p>
+                </div>
+                
+                <div class="text-5xl text-gray-400 text-center font-light md:my-0 my-4">+</div>
+
+                <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg bg-gray-50">
+                    <img src="https://placehold.co/150x150/dbeafe/3b82f6?text=Paired+Item" alt="Paired Bundle Item" class="w-32 h-32 object-cover rounded-md mb-3">
+                    <h3 class="font-medium text-gray-800">Classic Denim Jeans</h3>
+                    <p class="text-lg font-semibold text-blue-600">$49.99</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-xl text-gray-700">Bundle Price: <span class="text-3xl font-bold text-green-600">$70.00</span> <span class="text-sm line-through text-gray-500 ml-1">$79.98</span></p>
+                <button class="mt-4 bg-green-600 text-white font-semibold py-3 px-10 rounded-lg hover:bg-green-700 transition-colors duration-200 text-lg">
+                    <i class="fas fa-box-open mr-2"></i> Add Bundle to Cart
+                </button>
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <div class="border-b border-gray-200">
+                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                    <button data-tab="description" class="tab-button active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Description</button>
+                    <button data-tab="productInfo" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">Product Information</button>
+                    <button data-tab="shippingDetails" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">Shipping Details</button>
+                </nav>
+            </div>
+            <div class="mt-6">
+                <div id="descriptionContent" class="tab-content active-tab-content prose max-w-none">
+                    <p>Experience ultimate comfort and style with our Premium Comfort T-Shirt. Made from the finest breathable cotton, this t-shirt is designed for all-day wear. Its classic fit and durable construction make it a versatile staple for any wardrobe. Perfect for casual outings, layering, or just lounging at home.</p>
+                    <ul class="list-disc pl-5 mt-4 space-y-1">
+                        <li>100% Premium Combed Cotton</li>
+                        <li>Soft, breathable fabric</li>
+                        <li>Durable double-stitched seams</li>
+                        <li>Tag-free neckline for added comfort</li>
+                        <li>Available in a variety of vibrant colors</li>
+                    </ul>
+                </div>
+                <div id="productInfoContent" class="tab-content prose max-w-none">
+                    <h4 class="font-semibold">Specifications:</h4>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Material: 100% Cotton (Solid Colors), 60% Cotton / 40% Polyester (Heather Colors)</li>
+                        <li>Fit: Classic Unisex Fit</li>
+                        <li>Care Instructions: Machine wash cold, tumble dry low. Do not bleach. Iron low if needed.</li>
+                        <li>Origin: Responsibly sourced and manufactured.</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">Model Information:</h4>
+                    <p>Model is 6'0" (183cm) wearing size Medium.</p>
+                </div>
+                <div id="shippingDetailsContent" class="tab-content prose max-w-none">
+                    <h4 class="font-semibold">Shipping Options:</h4>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Standard Shipping: 5-7 business days (Free on orders over $50)</li>
+                        <li>Express Shipping: 2-3 business days ($15.00)</li>
+                        <li>Overnight Shipping: 1 business day ($25.00)</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">Returns & Exchanges:</h4>
+                    <p>We offer free returns and exchanges within 30 days of purchase. Items must be unworn, unwashed, and in their original condition with tags attached. Please visit our <a href="#" class="text-blue-600 hover:underline">Returns Center</a> to initiate a return.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Pair Well With</h2>
+            <div class="pair-well-with-container flex space-x-6 overflow-x-auto pb-4 -mx-4 px-4">
+                <div class="product-card flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/f3f4f6/6b7280?text=Pair+Item+1" alt="Complementary Product 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Casual Chinos</h3>
+                        <p class="text-lg font-bold text-blue-600 mb-3">$39.99</p>
+                        <button class="w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200"><i class="fas fa-plus mr-1"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/e5e7eb/4b5563?text=Pair+Item+2" alt="Complementary Product 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Stylish Sneakers</h3>
+                        <p class="text-lg font-bold text-blue-600 mb-3">$59.99</p>
+                        <button class="w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200"><i class="fas fa-plus mr-1"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/d1d5db/374151?text=Pair+Item+3" alt="Complementary Product 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Classic Watch</h3>
+                        <p class="text-lg font-bold text-blue-600 mb-3">$89.00</p>
+                        <button class="w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200"><i class="fas fa-plus mr-1"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card flex-none w-72 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/9ca3af/1f2937?text=Pair+Item+4" alt="Complementary Product 4" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Leather Belt</h3>
+                        <p class="text-lg font-bold text-blue-600 mb-3">$24.50</p>
+                        <button class="w-full bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200"><i class="fas fa-plus mr-1"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Related Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="https://placehold.co/300x300/fef2f2/dc2626?text=Related+1" alt="Related Product 1" class="w-full h-56 object-cover">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">New</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Graphic Print Hoodie</h3>
+                        <p class="text-lg font-bold text-blue-600">$45.00</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                     <div class="relative">
+                        <img src="https://placehold.co/300x300/eff6ff/60a5fa?text=Related+2" alt="Related Product 2" class="w-full h-56 object-cover">
+                         <span class="absolute top-2 left-2 bg-yellow-400 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full">Popular</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">V-Neck Sweater</h3>
+                        <p class="text-lg font-bold text-blue-600">$35.99</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/f0fdf4/22c55e?text=Related+3" alt="Related Product 3" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Slim Fit Chinos</h3>
+                        <p class="text-lg font-bold text-blue-600">$42.00</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/300x300/fdf2f8/ec4899?text=Related+4" alt="Related Product 4" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-1">Polo Shirt</h3>
+                        <p class="text-lg font-bold text-blue-600">$28.75</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">ShopLogo</h3>
+                    <p class="text-sm">Your one-stop shop for premium quality apparel and accessories. Style meets comfort.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Newsletter</h3>
+                    <p class="text-sm mb-3">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 rounded-l-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <div id="sizeChartModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden opacity-0 visibility-hidden" role="dialog" aria-modal="true" aria-labelledby="sizeChartModalTitle">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-lg p-6 sm:p-8 transform scale-100">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="sizeChartModalTitle" class="text-2xl font-semibold text-gray-800">Size Chart - T-Shirts</h2>
+                <button id="closeSizeChartModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-600">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-100 rounded-t-lg">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Size</th>
+                            <th scope="col" class="px-6 py-3">Chest (in)</th>
+                            <th scope="col" class="px-6 py-3">Length (in)</th>
+                            <th scope="col" class="px-6 py-3">Sleeve (in)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b">
+                            <td class="px-6 py-4 font-medium">XS</td>
+                            <td class="px-6 py-4">32-34</td>
+                            <td class="px-6 py-4">26</td>
+                            <td class="px-6 py-4">7.5</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b">
+                            <td class="px-6 py-4 font-medium">S</td>
+                            <td class="px-6 py-4">35-37</td>
+                            <td class="px-6 py-4">27</td>
+                            <td class="px-6 py-4">8</td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="px-6 py-4 font-medium">M</td>
+                            <td class="px-6 py-4">38-40</td>
+                            <td class="px-6 py-4">28</td>
+                            <td class="px-6 py-4">8.5</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b">
+                            <td class="px-6 py-4 font-medium">L</td>
+                            <td class="px-6 py-4">41-43</td>
+                            <td class="px-6 py-4">29</td>
+                            <td class="px-6 py-4">9</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-medium">XL</td>
+                            <td class="px-6 py-4">44-46</td>
+                            <td class="px-6 py-4">30</td>
+                            <td class="px-6 py-4">9.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button id="closeSizeChartModalBottom" class="mt-6 w-full bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md hover:bg-gray-300 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <div id="compareColorsModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden opacity-0 visibility-hidden" role="dialog" aria-modal="true" aria-labelledby="compareColorsModalTitle">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-2xl p-6 sm:p-8 transform scale-100">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="compareColorsModalTitle" class="text-2xl font-semibold text-gray-800">Compare Colors</h2>
+                <button id="closeCompareColorsModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">Select two or more colors to compare side-by-side. (Max 3 for this demo)</p>
+            <div id="compareColorSwatchesContainer" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 mb-6">
+                </div>
+            <div id="comparisonArea" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 min-h-[150px] bg-gray-50 p-4 rounded-md border border-gray-200">
+                <p id="comparisonPlaceholder" class="col-span-full text-center text-gray-500 self-center">Select colors above to compare.</p>
+            </div>
+             <div class="mt-6 flex justify-end space-x-3">
+                <button id="resetComparisonButton" class="bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md hover:bg-gray-300 transition-colors">Reset</button>
+                <button id="closeCompareColorsModalBottom" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Done</button>
+            </div>
+        </div>
+    </div>
+
+<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        /* Scrollbar styling for thumbnail gallery and "Pair Well With" */
+        .thumbnail-gallery::-webkit-scrollbar,
+        .pair-well-with-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .thumbnail-gallery::-webkit-scrollbar-thumb,
+        .pair-well-with-container::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* Tailwind gray-400 */
+            border-radius: 10px;
+        }
+        .thumbnail-gallery::-webkit-scrollbar-track,
+        .pair-well-with-container::-webkit-scrollbar-track {
+            background-color: #e2e8f0; /* Tailwind gray-300 */
+        }
+
+        /* Active thumbnail border */
+        .thumbnail-gallery img.active-thumbnail {
+            border: 2px solid #3b82f6; /* Tailwind blue-500 */
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .modal.hidden .modal-content {
+            transform: scale(0.95);
+        }
+
+        /* Tab styles */
+        .tab-button.active-tab {
+            border-color: #3b82f6; /* Tailwind blue-500 */
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active-tab-content {
+            display: block;
+        }
+
+        /* Image Zoom */
+        .main-image-container {
+            position: relative;
+            overflow: hidden; /* Crucial for zoom effect */
+        }
+        #mainProductImageZoom {
+            transition: transform 0.2s ease-out;
+            transform-origin: center center; /* Default, can be changed by JS */
+        }
+
+        /* Color swatch selected state */
+        .color-swatch.selected-swatch {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Compare colors modal swatch selected state */
+        .compare-color-swatch.selected-for-compare {
+            border: 3px solid #10B981; /* Tailwind green-500 */
+            transform: scale(1.1);
+        }
+
+        /* Subtle hover effects for product cards */
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Ensure buttons and interactive elements have good touch targets */
+        button, .color-swatch, .size-button, .thumbnail-gallery img {
+            padding: 0.75rem; /* Equivalent to p-3 in Tailwind */
+            cursor: pointer;
+        }
+        select {
+             padding: 0.75rem;
+        }
+
