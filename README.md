@@ -20,4 +20,5 @@ This project is a beautifully designed, fully responsive product page inspired b
 1. **Clone the repository**
    ```bash
    git clone https://github.com/DeveloperManikDas/Global-Trend-Assignment.git
-   cd Assignment
+   cd Global-Trend-Assignment
+   copy the index.html file path and paste it to the browser 
